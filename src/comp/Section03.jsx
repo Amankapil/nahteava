@@ -133,7 +133,7 @@ export default function Section03() {
             focused on you and your organization's goals.
           </motion.p>
 
-          <div className="mt-10 mb-28 px-4">
+          <div className="mt-10 mb-28 px-">
             <div className="fle justify-center mt-10">
               <motion.button
                 className="relative overflow-hidden group bg-black text-white py-3 px-9 flex items-center justify-center text-sm"

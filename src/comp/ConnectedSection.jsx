@@ -141,7 +141,7 @@ export default function Section01() {
               whileInView={{
                 backgroundSize: "100% 100%",
               }}
-              transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
               viewport={{ once: true }}
             >
               Strategy
@@ -164,7 +164,7 @@ export default function Section01() {
             initial={{ width: 0, opacity: 1 }}
             whileInView={{ width: 400, opacity: 1 }}
             transition={{
-              duration: 1,
+              duration: 0.5,
               ease: [0, 1, 0.49, 1], // Custom cubic-bezier easing
             }}
             viewport={{ once: true, amount: 0.1 }}

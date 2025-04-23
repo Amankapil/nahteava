@@ -115,7 +115,7 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-10 -left-52 bg-white shadow-lg flex z-50"
+                  className="absolute top-12 -left-64 bg-white shadow-lg flex z-50"
                 >
                   {/* Left Image */}
                   <div className="w-60 bg-orange-500 flex justify-center items-center p-4">

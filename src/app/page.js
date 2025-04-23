@@ -11,16 +11,32 @@ import TestimonialSwiper from "@/comp/TestimonialSwiper";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Lenis from "lenis";
 
 export default function Home() {
-  const sectionRef = useRef(null);
+  // const sectionRef = useRef(null);
 
-  // Get scroll progress of this section
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"], // when the section enters and leaves the viewport
-  });
-  const y = useTransform(scrollYProgress, [0, 1], ["00%", "-100%"]);
+  // // Get scroll progress of this section
+  // const { scrollYProgress } = useScroll({
+  //   target: sectionRef,
+  //   offset: ["start end", "end start"], // when the section enters and leaves the viewport
+  // });
+  // const y = useTransform(scrollYProgress, [0, 1], ["00%", "-100%"]);
+  useEffect(() => {
+    const lenis = new Lenis({
+      smooth: true,
+      duration: 1.2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => lenis.destroy();
+  }, []);
 
   return (
     <>
@@ -30,7 +46,7 @@ export default function Home() {
       <div>
         <ConnectedSection />
       </div>
-      <div ref={sectionRef}>
+      <div>
         {/* <motion.div style={{ y }}> */}
         {/* <motion.div className="absolute inset-0 z-0"> */}
         <Services />

@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import Image from "next/image";
 // import classNames from "classnames";
@@ -156,7 +155,7 @@ export default function Section02() {
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                       className={`absolute inset-0 ${
                         hovered ? "origin-top" : "origin-bottom"
-                      } bg-orange-500 z-0`}
+                      } bg-[#FF8200] z-0`}
                     />
 
                     {/* Content */}

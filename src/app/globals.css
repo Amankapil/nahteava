@@ -1,26 +1,239 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* @font-face {
+  font-family: "mark";
+  src: url("./fonts/Mark-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+} */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Mark Regular";
+  src: url("./fonts/MarkPro.otf") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  font-family: "Mark Regular", sans-serif;
+  background-color: #f5f5f5;
+  letter-spacing: -0.09em;
+}
+@keyframes floating {
+  from {
+    transform: translate(0, -20px);
+  }
+  /* 25% {
+    transform: translate(0, -5px);
+  } */
+  50% {
+    transform: translate(0, -10px);
+  }
+  to {
+    transform: translate(0, -20px);
+  }
+}
+@keyframes floating2 {
+  from {
+    transform: translate(0, 25px);
+  }
+  /* 25% {
+    transform: translate(0, -5px);
+  } */
+  50% {
+    transform: translate(0, 24px);
+  }
+  to {
+    transform: translate(0, 25px);
+  }
+}
+@keyframes floating3 {
+  from {
+    transform: translate(0, -10px);
+  }
+  /* 25% {
+    transform: translate(0, -5px);
+  } */
+  50% {
+    transform: translate(0, -9px);
+  }
+  to {
+    transform: translate(0, -10px);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.hover-button {
+  position: relative;
+  width: 195px;
+  height: 48px;
+  color: #4a4a4a;
+  overflow: hidden;
+  /* border: 1px solid #ccc; */
+  background: #ececec;
+  font-weight: 600;
+  font-size: 16px;
+  color: #333;
+  /* border-radius: 0.5rem; */
+  box-shadow: 0px 2px 3px 0px #00000005 inset;
+  transition: all 0.5s ease-in-out;
+}
+
+.hover-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75%;
+  height: 93%;
+  margin-top: 2px;
+
+  border: 1px solid #fff;
+  box-shadow: 0px 3px 7px -2px #b3b3b3;
+  margin-left: 2px;
+  background: white;
+  transition: width 0.5s ease;
+  z-index: 0;
+  transition: all 0.5s cubic-bezier(0, 0.92, 0.29, 1);
+}
+
+.hover-button:hover::before {
+  width: 98%;
+}
+.text {
+  margin-left: -48px;
+  color: #4a4a4a;
+  font-weight: 400;
+  text-shadow: 0px 1px 5px 0px #0000002e;
+  /* text-shadow: 0px 1px 0px 0px #e1e1e1b2; */
+  transition: margin 0.1s cubic-bezier(0, 0.92, 0.29, 1);
+}
+.hover-button .text,
+.hover-button .arrow,
+.hover-button .icon {
+  position: relative;
+  z-index: 1;
+  transition: all 0.5s ease-in-out;
+  transition: margin 0.5s ease-in-out;
+}
+
+.hover-button .arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.3s;
+}
+
+.hover-button .icon {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.hover-button:hover .arrow {
+  /* opacity: 0; */
+  /* transform: translateY(20px); */
+  margin-right: -50px;
+  transition: all 0.5s ease-in-out;
+  transition: margin 0.5s ease-in-out;
+  /* transform: translateX(-20px); */
+}
+.hover-button:hover .text {
+  margin-left: 0px;
+  color: #000;
+  /* transition: all 0.5s ease-in-out; */
+  transition: margin 0.5s cubic-bezier(0, 0.92, 0.29, 1);
+}
+
+.hover-button:hover .icon {
+  right: 20px;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+  transition: right 0.5s ease-in-out;
+}
+
+/* ? button css  */
+.fancy-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 24px 12px 32px;
+  background-color: #111;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: color 0.3s ease-in;
+  z-index: 1;
+  /* 		width:100%; */
+}
+
+.fancy-btn .bg-box {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: orange;
+  transform: translateY(-50%);
+  transition: all 0.5s ease;
+  margin-left: 4px;
+  z-index: 0; /* Behind the text */
+}
+
+.fancy-btn:hover .bg-box {
+  width: 320%;
+  height: 300%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(50deg) scale(1.2);
+}
+.fancy-btn:hover .moree {
+  /* 	margin-left:-10px; */
+  z-index: 9999999999;
+}
+.fancy-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ff8200;
+  z-index: 0;
+  transform: scale(0);
+  transition: transform 0.5s ease;
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.fancy-btn span,
+.fancy-btn::after {
+  position: relative;
+  z-index: 2; /* Ensures text stays on top */
+}
+
+.cards {
+  /* display: inline-block; */
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.cards:nth-child(1) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.cards:nth-child(2) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.cards:nth-child(3) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+.cards:nth-child(4) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
 }

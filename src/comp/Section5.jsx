@@ -50,7 +50,7 @@ export default function Section5() {
   };
   return (
     <>
-      <div className="grid grid-cols-12 border-b border-gray-200">
+      <div className="grid grid-cols-12 border-b bg-[#EBEBEB] border-[#ccc]">
         <div className="col-span-3 flex items-satrt justify-start border-r border-[#CCCCCC] ">
           <div className="bglack text-white px-6 py-2 font-bold h-[76px] w-[200px] mt-4 ">
             {/* <spna className="text-[60px] leading-[100%]">05</spna> */}
@@ -62,7 +62,7 @@ export default function Section5() {
           </h2>
         </div>
       </div>
-      <div className="grid grid-cols-12 border-b border-gray-200">
+      <div className="grid grid-cols-12 border-b bg-[#EBEBEB] border-[#CCCCCC]">
         <div className="col-span-3 flex items-satrt justify-start border-r border-[#CCCCCC] ">
           {/* <div className="bg-black text-white px-6 py-2 font-bold h-[76px] w-[200px] mt-4 ">
             <spna className="text-[60px] leading-[100%]">05</spna>
@@ -80,13 +80,13 @@ export default function Section5() {
             <spna className="text-[60px] leading-[100%]">05</spna>
           </motion.div>
         </div>
-        <div className="col-span-9 px-8 py-4">
+        <div className="col-span-9 px-6 py-6">
           {/* <h2 className="text-[60px] font-normal font-mark mb-4">
             Our Latest News And Insights
           </h2> */}
-          <div className="  h-[108px] overflowhidden  ">
+          <div className="  h-[108px] overflowhidden  relative ">
             <motion.h1
-              className="text-[60px] font-normal font-mark mb-12"
+              className="text-[60px] font-normal font-mark mb-12 leading-[60px]"
               initial={{ y: 60, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
@@ -98,10 +98,58 @@ export default function Section5() {
             >
               Our Latest News And Insights
             </motion.h1>
+            <div className="absolute right-0 top-4">
+              <svg
+                width="18"
+                height="20"
+                viewBox="0 0 18 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 13.2741V0.987305L5.89269 1.03215C10.9535 1.49851 12.7097 6.03955 12.9553 8.25178C12.9986 8.87957 12.9553 13.7225 12.9553 13.7225C10.8755 13.5073 10.1533 11.7495 10.0522 10.8975L10.0089 9.05894C10.0089 8.5567 9.95114 8.19199 9.92226 8.07241C9.15967 4.9155 6.51374 4.09638 5.28609 4.08143H4.00324C3.37258 4.08143 2.86219 4.59215 2.86527 5.22279C2.87697 7.62298 2.90302 12.996 2.90302 13.2741C2.90302 13.6329 2.38312 14.5297 1.42984 14.5297C0.476567 14.5297 0 13.6329 0 13.2741Z"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="3.03423"
+                  cy="16.6822"
+                  rx="1.29986"
+                  ry="1.34527"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="5.11339"
+                  cy="19.0139"
+                  rx="0.95323"
+                  ry="0.986533"
+                  fill="#FF8200"
+                />
+                <path
+                  d="M18 6.72685V19.0137L12.1073 18.9688C7.04652 18.5025 5.29026 13.9614 5.04473 11.7492C5.00141 11.1214 5.04473 6.27843 5.04473 6.27843C7.12451 6.49367 7.84666 8.25149 7.94776 9.1035L7.99109 10.942C7.99109 11.4443 8.04886 11.809 8.07774 11.9286C8.84033 15.0855 11.4863 15.9046 12.7139 15.9195H13.9968C14.6274 15.9195 15.1378 15.4088 15.1347 14.7782C15.123 12.378 15.097 7.005 15.097 6.72685C15.097 6.36811 15.6169 5.47126 16.5702 5.47126C17.5234 5.47126 18 6.36811 18 6.72685Z"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="14.967"
+                  cy="3.31879"
+                  rx="1.29986"
+                  ry="1.34527"
+                  transform="rotate(180 14.967 3.31879)"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="12.8878"
+                  cy="0.9871"
+                  rx="0.95323"
+                  ry="0.986533"
+                  transform="rotate(180 12.8878 0.9871)"
+                  fill="#FF8200"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
-      <div className="bg-[#f3f3f3] py-16 px-4">
+      <div className="bg-[#EBEBEB] py-0 px-4 relative">
         {/* <div className="grid grid-cols-1 borde sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 px-4">
           {articles.map((item, idx) => (
             <div
@@ -142,27 +190,28 @@ export default function Section5() {
             </div>
           ))}
         </div> */}
+        {/* <div className="absolute top-0 left-[25%] w-[1px] h-[100%] bg-[#CCCCCC] z-1"></div> */}
 
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 px-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 px-4"
         >
           {articles.map((item, idx) => (
             <motion.div
               variants={card}
               key={idx}
-              className={`relative border-2 border-dashed h-[383px] border-orange-400 p-1 ${
-                idx % 2 === 1 ? "mt-[200px]" : ""
+              className={`relative border-1 border-dashed h-[383px] border-[#FF8200] p-2 ${
+                idx % 2 === 1 ? "mt-[128px]" : ""
               }`}
             >
               {/* Orange Corners */}
-              <div className="absolute z-[9999] -top-1 -left-1 w-3 h-3 bg-orange-500"></div>
-              <div className="absolute z-[9999] -top-1 -right-1 w-3 h-3 bg-orange-500"></div>
-              <div className="absolute z-[9999] -bottom-1 -left-1 w-3 h-3 bg-orange-500"></div>
-              <div className="absolute z-[9999] -bottom-1 -right-1 w-3 h-3 bg-orange-500"></div>
+              <div className="absolute z-[9999] -top-[6px] -left-[6px] w-3 h-3 bg-[#FF8200]"></div>
+              <div className="absolute z-[9999] -top-[6px] -right-[6px] w-3 h-3 bg-[#FF8200]"></div>
+              <div className="absolute z-[9999] -bottom-[6px] -left-[6px] w-3 h-3 bg-[#FF8200]"></div>
+              <div className="absolute z-[9999] -bottom-[6px] -right-[6px] w-3 h-3 bg-[#FF8200]"></div>
 
               <div className="bg-[#E0E0E0]">
                 <div className="relative w-full h-56">
@@ -170,9 +219,9 @@ export default function Section5() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className="object-cover border border-[#ccc]"
                   />
-                  <div className="absolute bottom-2 left-2 bg-[#F3F3F3] px-2 py-1 text-sm font-medium">
+                  <div className="absolute bottom-0 left-0 bg-[#E0E0E0] border border-[#ccc] px-2 py-1 text-sm font-medium">
                     {item.type}
                   </div>
                 </div>
@@ -266,40 +315,51 @@ export default function Section5() {
           ))}
         </motion.div>
 
-        <div className="flex justify-center mt-16 mb-28">
-          <motion.button
-            className="relative overflow-hidden group bg-black text-white py-3 px-9 flex items-center justify-center text-sm"
-            whileHover="hover"
-            initial="rest"
-            animate="rest"
+        <div className="flex max-w-[200px] z-[999] mx-auto justify-center pt-[66px] pb-36 overflow-hidden ">
+          <motion.div
+            initial={{ width: 400, opacity: 0, x: -100 }}
+            whileInView={{ width: 400, opacity: 1, x: 0 }}
+            transition={{
+              duration: 1,
+              ease: "easeIn",
+            }}
+            viewport={{ once: true, amount: 0.1 }}
+            className="flex justify-center overflowhidden"
           >
-            <motion.span
-              variants={{
-                rest: {
-                  scale: 1,
-                  rotate: 0,
-                  width: "6px",
-                  height: "6px",
-                  borderRadius: "0px",
-                  x: 0,
-                  y: 0,
-                },
-                hover: {
-                  scale: 70,
-                  rotate: 90,
-                  borderRadius: "0px",
-                  transition: {
-                    duration: 0.9,
-                    ease: [0.35, 0.17, 0.3, 0.86],
+            <motion.button
+              className="relative overflow-hidden group bg-black text-white py-3 px-9 pr-[26px] flex items-center justify-center text-sm"
+              whileHover="hover"
+              initial="rest"
+              animate="rest"
+            >
+              <motion.span
+                variants={{
+                  rest: {
+                    scale: 1,
+                    rotate: 0,
+                    width: "6px",
+                    height: "6px",
+                    borderRadius: "0px",
+                    x: 0,
+                    y: 0,
                   },
-                },
-              }}
-              className="absolute bg-[#FF8200] z-0 left-4"
-            />
-            <span className="relative text-[16px] z-10 pl4 group-hoverpl-0 ">
-              View all
-            </span>
-          </motion.button>
+                  hover: {
+                    scale: 70,
+                    rotate: 90,
+                    borderRadius: "0px",
+                    transition: {
+                      duration: 0.9,
+                      ease: [0.35, 0.17, 0.3, 0.86],
+                    },
+                  },
+                }}
+                className="absolute bg-[#FF8200] z-0 left-[24px]"
+              />
+              <span className="relative text-[16px] text-[#fff] z-10 pl4 group-hoverpl-0 ">
+                View all
+              </span>
+            </motion.button>
+          </motion.div>
         </div>
 
         {/* </div> */}

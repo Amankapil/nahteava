@@ -21,7 +21,7 @@ export default function Section02() {
 
   return (
     <>
-      <div className="bg-[#EBEBEB]">
+      <div className="bg-[#EBEBEB] border-t border-[#ccc]">
         <div className="grid grid-cols-12 border-b border-gray-200">
           <div className="col-span-3 flex items-satrt justify-start border-r border-[#CCCCCC] ">
             <motion.div
@@ -37,13 +37,10 @@ export default function Section02() {
               <spna className="text-[60px] leading-[100%]">02</spna>
             </motion.div>
           </div>
-          <div className="col-span-9 px-8 py-4">
-            {/* <h2 className="text-[60px] font-normal font-mark mb-4">
-              Our Services
-            </h2> */}
-            <div className="  h-[108px] overflowhidden  ">
+          <div className="col-span-9 px-6 pb-6 pt-6">
+            <div className="  h-[108px] overflowhidden relative ">
               <motion.h1
-                className="text-[60px] font-normal font-mark mb-12"
+                className="text-[60px] font-normal font-mark mb-12 leading-[60px]"
                 initial={{ y: 60, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{
@@ -55,14 +52,62 @@ export default function Section02() {
               >
                 Our Services
               </motion.h1>
+              <div className="absolute right-0 top-4">
+                <svg
+                  width="18"
+                  height="20"
+                  viewBox="0 0 18 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0 13.2741V0.987305L5.89269 1.03215C10.9535 1.49851 12.7097 6.03955 12.9553 8.25178C12.9986 8.87957 12.9553 13.7225 12.9553 13.7225C10.8755 13.5073 10.1533 11.7495 10.0522 10.8975L10.0089 9.05894C10.0089 8.5567 9.95114 8.19199 9.92226 8.07241C9.15967 4.9155 6.51374 4.09638 5.28609 4.08143H4.00324C3.37258 4.08143 2.86219 4.59215 2.86527 5.22279C2.87697 7.62298 2.90302 12.996 2.90302 13.2741C2.90302 13.6329 2.38312 14.5297 1.42984 14.5297C0.476567 14.5297 0 13.6329 0 13.2741Z"
+                    fill="#FF8200"
+                  />
+                  <ellipse
+                    cx="3.03423"
+                    cy="16.6822"
+                    rx="1.29986"
+                    ry="1.34527"
+                    fill="#FF8200"
+                  />
+                  <ellipse
+                    cx="5.11339"
+                    cy="19.0139"
+                    rx="0.95323"
+                    ry="0.986533"
+                    fill="#FF8200"
+                  />
+                  <path
+                    d="M18 6.72685V19.0137L12.1073 18.9688C7.04652 18.5025 5.29026 13.9614 5.04473 11.7492C5.00141 11.1214 5.04473 6.27843 5.04473 6.27843C7.12451 6.49367 7.84666 8.25149 7.94776 9.1035L7.99109 10.942C7.99109 11.4443 8.04886 11.809 8.07774 11.9286C8.84033 15.0855 11.4863 15.9046 12.7139 15.9195H13.9968C14.6274 15.9195 15.1378 15.4088 15.1347 14.7782C15.123 12.378 15.097 7.005 15.097 6.72685C15.097 6.36811 15.6169 5.47126 16.5702 5.47126C17.5234 5.47126 18 6.36811 18 6.72685Z"
+                    fill="#FF8200"
+                  />
+                  <ellipse
+                    cx="14.967"
+                    cy="3.31879"
+                    rx="1.29986"
+                    ry="1.34527"
+                    transform="rotate(180 14.967 3.31879)"
+                    fill="#FF8200"
+                  />
+                  <ellipse
+                    cx="12.8878"
+                    cy="0.9871"
+                    rx="0.95323"
+                    ry="0.986533"
+                    transform="rotate(180 12.8878 0.9871)"
+                    fill="#FF8200"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
         <section className="w-full border border-[#CCCCCC] grid grid-cols-12 bg-[#E6E6E6]">
           {/* Left Side - Image */}
 
-          <div className="col-span-3 flex  items-start justify-start bg-[#E6E6E6] border-r border-[#CCCCCC] py-8 px-4">
-            <div className="wfull flex items-start justify-start overflow-hidden   sticky w-[300px] top-[150px] h-[400px]">
+          <div className="col-span-3 flex  items-start justify-start bg-[#E6E6E6] border-r border-[#CCCCCC] py-6 pr-6">
+            <div className="wfull flex items-start justify-start overflow-hidden   sticky w-[353px] top-[150px] h-[353px]">
               {services.map((service, index) => (
                 <div
                   key={index}
@@ -77,8 +122,8 @@ export default function Section02() {
                   <Image
                     src={service.image}
                     alt={service.title}
-                    width={354}
-                    height={354}
+                    width={353}
+                    height={353}
                     className="object-contain"
                   />
                 </div>
@@ -146,7 +191,7 @@ export default function Section02() {
                       setHovered(false);
                       setActiveIndex(-1);
                     }}
-                    className="relative overflow-hidden flex items-center justify-between px-4 border-t border-b border-[#CCCCCC] py-6 bg-[#E6E6E6] cursor-pointer group"
+                    className="relative overflow-hidden flex items-center justify-between px-6 border-t border-b border-[#CCCCCC] py-6 bg-[#E6E6E6] cursor-pointer group"
                   >
                     {/* Animated Background Fill */}
                     <motion.div
@@ -171,40 +216,51 @@ export default function Section02() {
             </div>
 
             <div className=" mt-10 mb-28 px-4">
-              <div className="flx justify-center mt-10">
-                <motion.button
-                  className="relative overflow-hidden group bg-black text-white py-3 px-9 flex items-center justify-center text-sm"
-                  whileHover="hover"
-                  initial="rest"
-                  animate="rest"
+              <div className="flx justify-center mt z-[9999] relative wfull origin-right overflow-hidden w-[200px]">
+                <motion.div
+                  initial={{ width: 400, opacity: 0, x: -200 }}
+                  whileInView={{ width: 400, opacity: 1, x: 0 }}
+                  transition={{
+                    duration: 1,
+                    ease: "easeIn",
+                  }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  className="mt-12 mb-36"
                 >
-                  <motion.span
-                    variants={{
-                      rest: {
-                        scale: 1,
-                        rotate: 0,
-                        width: "6px",
-                        height: "6px",
-                        borderRadius: "0px",
-                        x: 0,
-                        y: 0,
-                      },
-                      hover: {
-                        scale: 70,
-                        rotate: 90,
-                        borderRadius: "0px",
-                        transition: {
-                          duration: 0.9,
-                          ease: [0.35, 0.17, 0.3, 0.86],
+                  <motion.button
+                    className="relative overflow-hidden group bg-black text-white py-3 px-9 pr-[26px] flex items-center justify-center text-sm"
+                    whileHover="hover"
+                    initial="rest"
+                    animate="rest"
+                  >
+                    <motion.span
+                      variants={{
+                        rest: {
+                          scale: 1,
+                          rotate: 0,
+                          width: "6px",
+                          height: "6px",
+                          borderRadius: "0px",
+                          x: 0,
+                          y: 0,
                         },
-                      },
-                    }}
-                    className="absolute bg-[#FF8200] z-0 left-4"
-                  />
-                  <span className="relative text-[16px] text-[#fff] z-10 pl4 group-hoverpl-0 ">
-                    Learn More
-                  </span>
-                </motion.button>
+                        hover: {
+                          scale: 70,
+                          rotate: 90,
+                          borderRadius: "0px",
+                          transition: {
+                            duration: 0.9,
+                            ease: [0.35, 0.17, 0.3, 0.86],
+                          },
+                        },
+                      }}
+                      className="absolute bg-[#FF8200] z-0 left-[24px]"
+                    />
+                    <span className="relative text-[16px] text-[#fff] z-10 pl4 group-hoverpl-0 ">
+                      Learn More
+                    </span>
+                  </motion.button>
+                </motion.div>
               </div>
             </div>
           </div>

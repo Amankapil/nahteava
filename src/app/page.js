@@ -47,10 +47,7 @@ export default function Home() {
         <ConnectedSection />
       </div>
       <div>
-        {/* <motion.div style={{ y }}> */}
-        {/* <motion.div className="absolute inset-0 z-0"> */}
         <Services />
-        {/* </motion.div> */}
       </div>
       <div>
         <Section03 />
@@ -61,11 +58,11 @@ export default function Home() {
       <div className="bg-[#F5F5F5] ">
         <Section5 />
       </div>
-      <div className="relative z-20 bg-[#F5F5F5] mb[500px]">
+      <div className="relative z-20 bg-[#F5F5F5] mb[800px]">
         <Section06 />
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

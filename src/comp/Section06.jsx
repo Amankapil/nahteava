@@ -18,14 +18,15 @@ export default function Section06() {
   return (
     <section
       ref={sectionRef}
-      className="relative h[602px] overflow-hidden w-full !bg-[#F5F5F5]"
+      className="relative h-[602px] overflow-hidden w-full !bg-[#F5F5F5]"
     >
       {/* Moving Background */}
-      <motion.div style={{ y }} className="absolute inset-0 z-0">
+      {/* <motion.div style={{ y }} className="absolute inset-0 z-0"> */}
+      <motion.div className="absolute inset-0 z-1">
         <div
-          className="w-full h-full bg-[#F5F5F5]"
+          className="w-full h-full bg[#F5F5F5]  z-[9] relative"
           style={{
-            backgroundImage: 'url("/images/mon.png")',
+            backgroundImage: 'url("/images/bui2.svg")',
             // backgroundSize: "cover",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom center",
@@ -34,14 +35,15 @@ export default function Section06() {
       </motion.div>
 
       {/* Foreground Content */}
-      <div className="relative z-10 grid grid-cols-12 w-full h-full bg-gray100/90 border border-gray-300">
+      <div className="relative z10 grid grid-cols-12 w-full h-full border border-gray-300">
         {/* Left Section Number */}
-        <div className="col-span-3 flex items-start justify-start border-r border-[#CCCCCC]">
+        <div className="col-span-3 relative flex items-start justify-start borderr border-[#CCCCCC]">
+          <div className="absolute top-0 right-0 w-[1px] h-[60%] bg-[#CCCCCC] -z-0"></div>
           {/* <div className="bg-black text-white px-6 py-2 font-bold h-[76px] w-[200px] mt-4">
             <span className="text-[60px] leading-[100%]">06</span>
           </div> */}
           <motion.div
-            className="bg-black text-white  px-6 py-2 font-bold h-[76px] w-[200px] mt-6 "
+            className="bg-black text-white z-[9]  px-6 py-2 font-bold h-[76px] w-[200px] mt-6 "
             initial={{ width: 0, opacity: 0 }}
             whileInView={{ width: 200, opacity: 1 }}
             transition={{
@@ -55,11 +57,11 @@ export default function Section06() {
         </div>
 
         {/* Right Section Content */}
-        <div className="col-span-9 p-10 flex flex-col justify-start">
+        <div className="col-span-9 px-6 flex flex-col justify-start  z-[99]">
           {/* <h2 className="text-4xl font-semibold mb-6">Work With Us</h2> */}
-          <div className="  h-[108px] overflowhidden  ">
+          <div className="  h-[108px] overflowhidden relative pt-6">
             <motion.h1
-              className="text-[60px] font-normal font-mark mb-12"
+              className="text-[60px] font-normal font-mark mb15 leading-[60px]"
               initial={{ y: 60, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
@@ -71,6 +73,54 @@ export default function Section06() {
             >
               Work With Us
             </motion.h1>
+            <div className="absolute right-0 top-4">
+              <svg
+                width="18"
+                height="20"
+                viewBox="0 0 18 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 13.2741V0.987305L5.89269 1.03215C10.9535 1.49851 12.7097 6.03955 12.9553 8.25178C12.9986 8.87957 12.9553 13.7225 12.9553 13.7225C10.8755 13.5073 10.1533 11.7495 10.0522 10.8975L10.0089 9.05894C10.0089 8.5567 9.95114 8.19199 9.92226 8.07241C9.15967 4.9155 6.51374 4.09638 5.28609 4.08143H4.00324C3.37258 4.08143 2.86219 4.59215 2.86527 5.22279C2.87697 7.62298 2.90302 12.996 2.90302 13.2741C2.90302 13.6329 2.38312 14.5297 1.42984 14.5297C0.476567 14.5297 0 13.6329 0 13.2741Z"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="3.03423"
+                  cy="16.6822"
+                  rx="1.29986"
+                  ry="1.34527"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="5.11339"
+                  cy="19.0139"
+                  rx="0.95323"
+                  ry="0.986533"
+                  fill="#FF8200"
+                />
+                <path
+                  d="M18 6.72685V19.0137L12.1073 18.9688C7.04652 18.5025 5.29026 13.9614 5.04473 11.7492C5.00141 11.1214 5.04473 6.27843 5.04473 6.27843C7.12451 6.49367 7.84666 8.25149 7.94776 9.1035L7.99109 10.942C7.99109 11.4443 8.04886 11.809 8.07774 11.9286C8.84033 15.0855 11.4863 15.9046 12.7139 15.9195H13.9968C14.6274 15.9195 15.1378 15.4088 15.1347 14.7782C15.123 12.378 15.097 7.005 15.097 6.72685C15.097 6.36811 15.6169 5.47126 16.5702 5.47126C17.5234 5.47126 18 6.36811 18 6.72685Z"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="14.967"
+                  cy="3.31879"
+                  rx="1.29986"
+                  ry="1.34527"
+                  transform="rotate(180 14.967 3.31879)"
+                  fill="#FF8200"
+                />
+                <ellipse
+                  cx="12.8878"
+                  cy="0.9871"
+                  rx="0.95323"
+                  ry="0.986533"
+                  transform="rotate(180 12.8878 0.9871)"
+                  fill="#FF8200"
+                />
+              </svg>
+            </div>
           </div>
           {/* <p className="text-[38px] font-mark mb-10">
             Looking for more than a{" "}
@@ -82,7 +132,7 @@ export default function Section06() {
             professionally and personally.
           </p> */}
           <motion.p
-            className="text-[38px] font-mark mb-10"
+            className="text-[38px] font-mark mt-10 w-[75%] leading-[46px]"
             initial={{ y: 60, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: [0, 1, 0.49, 1] }}
@@ -166,10 +216,10 @@ export default function Section06() {
             both professionally and personally.
           </motion.p>
 
-          <div className="mt-10 mb-28 px4">
-            <div className="flx justify-center mt-10">
+          <div className="mt-20 mb-36 px4">
+            <div className="flx justify-center mt10">
               <motion.button
-                className="relative overflow-hidden group bg-black text-white py-3 px-9 flex items-center justify-center text-sm"
+                className="relative overflow-hidden group w-[190px] h-[48px] bg-black text-white py-3 px-6 flex items-center justify-center text-sm"
                 whileHover="hover"
                 initial="rest"
                 animate="rest"
@@ -192,7 +242,7 @@ export default function Section06() {
                 />
 
                 {/* Button Text & Arrows */}
-                <span className="relative z-10 text-[16px] flex items-center gap-4">
+                <span className="relative z-10 text-[16px] flex items-center justify-between gap-4">
                   Join Nahteava
                   <span className="relative overflow-hidden w-[16px] h-[20px] inline-block">
                     <motion.span

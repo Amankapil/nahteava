@@ -87,7 +87,7 @@ export default function Section01() {
             >
               What We Do
             </motion.h1>
-            <div className="absolute right-6 top-4">
+            <div className="absolute right-6 top-2">
               <svg
                 width="18"
                 height="20"

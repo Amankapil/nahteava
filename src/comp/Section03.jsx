@@ -71,7 +71,7 @@ export default function Section03() {
             >
               Who We Are
             </motion.h1>
-            <div className="absolute right-0 top-4">
+            <div className="absolute right-0 top-6">
               <svg
                 width="18"
                 height="20"

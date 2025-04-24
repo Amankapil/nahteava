@@ -88,12 +88,12 @@ const Navbar = () => {
           <Image alt="logo" src="/logo.png" width={160} height={40} />
         </div>
 
-        <div className="hidden md:flex gap-10 text-sm font-medium text-[#4A4A4A] relative font-mark text-[16px]">
+        <div className="hidden md:flex gap-6 text-sm font-medium text-[#4A4A4A] relative font-mark text-[16px]">
           <div
             // onMouseEnter={() => setShowDropdown("services")}
             // onMouseLeave={() => setShowDropdown(null)}
             onClick={() => setShowDropdown(!showDropdown)}
-            className={`relative cursor-pointer flex items-center p-2  gap-4 ${
+            className={`relative cursor-pointer flex items-center p-2  gap-2 ${
               showDropdown
                 ? "text-[#FF8200] border border-[#DBDBDB] bg-[#E6E6E6] py-2"
                 : ""
@@ -241,19 +241,19 @@ const Navbar = () => {
           </div>
 
           <a className=" p-2" href="#">
-            Insights
+            Solutions
           </a>
           <a className=" p-2" href="#">
             Industries
           </a>
           <a className=" p-2" href="#">
-            Solutions
+            Insights
           </a>
 
           <div
             // onMouseEnter={() => setShowDropdown("about")}
             // onMouseLeave={() => setShowDropdown(null)}
-            className="relative cursor-pointer flex items-center gap-4"
+            className="relative cursor-pointer flex items-center gap-2"
           >
             About Us{" "}
             <svg
@@ -300,11 +300,10 @@ const Navbar = () => {
             {searchOpen ? <IoMdClose /> : <FiSearch />}
           </button>
           {/* ??  lets talk underline animation  */}
-          <button className="bg-gray900 group underline text-[#4A4A4A] hover:text-[#FF8200] cursor-pointer px-4 py-2 rounded  transition flex items-center justify-center">
+          <button className="relative group text-[16px] text-[#4A4A4A] cursor-pointer px-6 py-2 mb15 font-normal transition duration-300 hover:text-[#FF8200] after:content-[''] after:absolute after:bottom-2 after:left-6 after:h-[1px] after:w-[80%] after:bg-[#4A4A4A] hover:after:bg-[#FF8200] after:transition-all after:duration-300 hover:after:w-[80%]">
             Let’s Talk
-            <span className="absolute overflow-hidden w-4 h-3 ml-1 -mr-[86px]">
+            <span className="absolute overflow-hidden w-4 h-4 top-[14px] ml-2 -mr-[86px]">
               <span className="absolute text-amber-50 left-0 top-0 transition-all duration-300 group-hover:translate-x-2 opacity-100 group-hover:opacity-0">
-                {/* → */}
                 <svg
                   width="15"
                   height="12"
@@ -319,9 +318,7 @@ const Navbar = () => {
                 </svg>
               </span>
 
-              {/* Second Arrow slides in from left on hover */}
               <span className="absolute text-amber-50 left-[-1rem] top-0 opacity-0 transition-all duration-300 group-hover:left-0 group-hover:opacity-100">
-                {/* → */}
                 <svg
                   width="15"
                   height="12"
@@ -337,6 +334,41 @@ const Navbar = () => {
               </span>
             </span>
           </button>
+          {/* <button className="bg-gray900 group underline text-[#4A4A4A] hover:text-[#FF8200] cursor-pointer px-4 py-2 rounded  transition flex items-center justify-center">
+            Let’s Talk
+            <span className="absolute overflow-hidden w-4 h-3 ml-1 -mr-[86px]">
+              <span className="absolute text-amber-50 left-0 top-0 transition-all duration-300 group-hover:translate-x-2 opacity-100 group-hover:opacity-0">
+
+                <svg
+                  width="15"
+                  height="12"
+                  viewBox="0 0 15 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.5 5.25L11.6275 5.25L7.435 1.0575L8.5 0L14.5 6L8.5 12L7.4425 10.9425L11.6275 6.75L0.5 6.75V5.25Z"
+                    fill="#4A4A4A"
+                  />
+                </svg>
+              </span>
+
+              <span className="absolute text-amber-50 left-[-1rem] top-0 opacity-0 transition-all duration-300 group-hover:left-0 group-hover:opacity-100">
+                <svg
+                  width="15"
+                  height="12"
+                  viewBox="0 0 15 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.5 5.25L11.6275 5.25L7.435 1.0575L8.5 0L14.5 6L8.5 12L7.4425 10.9425L11.6275 6.75L0.5 6.75V5.25Z"
+                    fill="#FF8200"
+                  />
+                </svg>
+              </span>
+            </span>
+          </button> */}
         </div>
       </div>
     </nav>

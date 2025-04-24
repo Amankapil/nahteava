@@ -320,7 +320,12 @@ export default function Hero() {
           }}
           className="flex justify-center mt-10 z-[9999] relative w-full !origin-right"
         >
-          <button className="hover-button group relative overflow-hidden bg-black text-white py-3 px-3 flex items-center justify-center text-sm">
+          <motion.button
+            whileHover="hover"
+            initial="rest"
+            animate="rest"
+            className="hover-button group relative overflow-hidden bg-black text-white py-3 px-3 flex items-center justify-center text-sm"
+          >
             <span className="text -ml[39px] font-mark font-normal">
               Let’s Talk
             </span>
@@ -359,32 +364,34 @@ export default function Hero() {
                 </svg>
               </span>
             </span>
-          </button>
+          </motion.button>
         </motion.div>
       </div>
 
       {/* Hero Image */}
-      <motion.div
-        initial={{ height: 0, opacity: 1 }}
-        animate={{ height: 600, opacity: 1 }}
-        transition={{
-          duration: 2,
-          delay: 0.6,
-          ease: [0, 0.45, 0.65, 1], // Custom cubic-bezier easing
-        }}
-        className="h-[600px] mt-11 overflow-hidden z-[999999]"
-      >
-        <div
-          className="h-[900px] mt-0 overflow-hidden"
-          style={{
-            backgroundImage: 'url("/images/img1.png")',
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "0% -50%",
-            transform: `translateY(-${scrollY * 0.3}px)`,
+      <div className="h-[600px]">
+        <motion.div
+          initial={{ height: 0, opacity: 1 }}
+          animate={{ height: 600, opacity: 1 }}
+          transition={{
+            duration: 2,
+            delay: 0.6,
+            ease: [0, 0.45, 0.65, 1], // Custom cubic-bezier easing
           }}
-        ></div>
-      </motion.div>
+          className="h-[600px] mt-11 overflow-hidden z-[999999]"
+        >
+          <div
+            className="h-[900px] mt-0 overflow-hidden"
+            style={{
+              backgroundImage: 'url("/images/img1.png")',
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "0% -50%",
+              transform: `translateY(-${scrollY * 0.3}px)`,
+            }}
+          ></div>
+        </motion.div>
+      </div>
     </section>
   );
 }

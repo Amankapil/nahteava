@@ -98,7 +98,7 @@ export default function Section5() {
             >
               Our Latest News And Insights
             </motion.h1>
-            <div className="absolute right-0 top-4">
+            <div className="absolute right-0 top-0">
               <svg
                 width="18"
                 height="20"

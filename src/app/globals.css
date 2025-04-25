@@ -251,3 +251,16 @@ body {
   background-color: #cccccc;
   z-index: 5; /* lower than background image z-index */
 }
+
+.group:hover .group-hover\\:animate-shineeffect {
+  animation: shineMove 1s ease-in-out infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    transform: translate(-100%, -100%);
+  }
+  100% {
+    transform: translate(100%, 100%);
+  }
+}

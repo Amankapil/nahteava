@@ -28,11 +28,7 @@ export default function Section01() {
   };
   const currentBg = bgColors[hovered] || bgColors.default;
   return (
-    <motion.section
-      className={`w-full  mt-0 border-gray-200 bg[#F5F5F5] }`}
-      animate={{ backgroundColor: currentBg }}
-      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <motion.section>
       <CustomCursor type={hovered} visible={!!hovered} />
       {/* Section Header */}
       <div className="grid grid-cols-12 border-b border-gray-200 pt-6">
@@ -74,7 +70,12 @@ export default function Section01() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-12 border-b border-gray-200">
+      <motion.div
+        // className={`w-full  mt-0 border-gray-200 bg[#F5F5F5] }`}
+        animate={{ backgroundColor: currentBg }}
+        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+        className="grid grid-cols-12 border-b border-gray-200"
+      >
         <div className="col-span-3 flex items-satrt justify-start border-r border-gray-200 ">
           <motion.div
             className="bg-black text-white  px-6 py-2 font-bold h-[76px] w-[200px] mt-6 "
@@ -281,7 +282,7 @@ export default function Section01() {
           >
             Nahteava is an independent consulting firm focused on{" "}
             <motion.span
-              className="mx-1 px-1 inline-block relative z-10 hover:z-[999999] hover:bg-transparent mix-blend-darken !hover:bg-none "
+              className="mx-1 px-1 inline-block relative z-10 hover:z-[999999]    hover:text-white  "
               style={{
                 background: "linear-gradient(#EFE574, #EFE574)",
                 backgroundRepeat: "no-repeat",
@@ -297,7 +298,7 @@ export default function Section01() {
             </motion.span>
             ,{" "}
             <motion.span
-              className="mx-1 px-1 inline-block relative z-10 hover:z-[99999999]  mix-blend-darken"
+              className="mx-1 px-1 inline-block relative z-10 hover:z-[99999999999]      hover:text-white "
               style={{
                 backgroundImage: "linear-gradient(#ECA4BD, #ECA4BD)",
                 backgroundRepeat: "no-repeat",
@@ -313,7 +314,7 @@ export default function Section01() {
             </motion.span>
             , and{" "}
             <motion.span
-              className="mx-1 px-1 inline-block relative z-10  hover:z-[99999999]    hover:text-white "
+              className="mx-1 px-1 inline-block relative z-10  hover:z-[9999999999]    hover:text-white "
               style={{
                 backgroundImage: "linear-gradient(#6DA5E1, #6DA5E1)",
                 backgroundRepeat: "no-repeat",
@@ -377,7 +378,7 @@ export default function Section01() {
             </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Metrics Section */}
       <div className="grid grid-cols-12 border-t border-gray-200 text-lg">

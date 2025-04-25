@@ -3,16 +3,40 @@ import { useState } from "react";
 import Image from "next/image";
 // import classNames from "classnames";
 import { motion } from "framer-motion";
+import CustomCursor from "./CustomCursor";
 
 export default function Section01() {
+  const [hovered, setHovered] = useState(null); // "it", "software", or "strategy"
+
+  // const getBgColor = () => {
+  //   switch (hovered) {
+  //     case "it":
+  //       return "bg-[#EFE574]";
+  //     case "software":
+  //       return "bg-[#ECA4BD]";
+  //     case "strategy":
+  //       return "bg-[#6DA5E1]";
+  //     default:
+  //       return "bg-white";
+  //   }
+  // };
+  const bgColors = {
+    it: "#F9F29E",
+    software: "#FDD1E0",
+    strategy: "#B7D6F7",
+    default: "#fff",
+  };
+  const currentBg = bgColors[hovered] || bgColors.default;
   return (
-    <section className="w-full  mt-0 border-gray-200 bg-[#F5F5F5]">
+    <motion.section
+      className={`w-full  mt-0 border-gray-200 bg[#F5F5F5] }`}
+      animate={{ backgroundColor: currentBg }}
+      transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      <CustomCursor type={hovered} visible={!!hovered} />
       {/* Section Header */}
       <div className="grid grid-cols-12 border-b border-gray-200 pt-6">
         <div className="col-span-3 flex items-end justify-start border-r border-gray-200 pt-[114px]">
-          {/* <div className=" text-[#727272] text-[20px] px-6 py-2 font-normal font-mark">
-            Section
-          </div> */}
           <div className="h-[48px] overflowhidden  ">
             <motion.h1
               className=" text-[#727272] text-[20px] px-6 py-2 font-normal font-mark"
@@ -52,10 +76,6 @@ export default function Section01() {
       </div>
       <div className="grid grid-cols-12 border-b border-gray-200">
         <div className="col-span-3 flex items-satrt justify-start border-r border-gray-200 ">
-          {/* <div className="bg-black text-white  px-6 py-2 font-bold h-[76px] w-[200px] mt-6 ">
-            <spna className="text-[60px] leading-[100%]">01</spna>
-          </div> */}
-
           <motion.div
             className="bg-black text-white  px-6 py-2 font-bold h-[76px] w-[200px] mt-6 "
             initial={{ width: 0, opacity: 0 }}
@@ -70,9 +90,6 @@ export default function Section01() {
           </motion.div>
         </div>
         <div className="col-span-9 pl-8 py-4">
-          {/* <h2 className="text-[60px] font-normal font-mark mb-12">
-            What We Do
-          </h2> */}
           <div className="  h-[100px] overflow-hidden relative ">
             <motion.h1
               className="text-[60px] font-normal font-mark mb-12"
@@ -137,7 +154,7 @@ export default function Section01() {
             </div>
           </div>
 
-          <motion.p
+          {/* <motion.p
             className="text-[38px] leading-[48px] w-[80%]"
             initial={{ y: 60, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -192,6 +209,121 @@ export default function Section01() {
               }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
               viewport={{ once: true }}
+            >
+              Strategy
+            </motion.span>
+            .
+          </motion.p> */}
+          {/* <motion.p
+            className="text-[38px] leading-[48px] w-[80%] mx-auto py-20"
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0, 1, 0.49, 1], delay: 0.6 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            Nahteava is an independent consulting firm focused on{" "}
+            <motion.span
+              className="mx-1 px-1 inline-block cursor-none relative z-10"
+              style={{
+                backgroundImage: "linear-gradient(#EFE574, #EFE574)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left center",
+                backgroundSize: "0% 100%",
+              }}
+              whileInView={{ backgroundSize: "100% 100%" }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              onMouseEnter={() => setHovered("it")}
+              onMouseLeave={() => setHovered(null)}
+            >
+              IT Asset Management
+            </motion.span>
+            ,{" "}
+            <motion.span
+              className="mx-1 px-1 inline-block cursor-none relative z-10"
+              style={{
+                backgroundImage: "linear-gradient(#ECA4BD, #ECA4BD)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left center",
+                backgroundSize: "0% 100%",
+              }}
+              whileInView={{ backgroundSize: "100% 100%" }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+              onMouseEnter={() => setHovered("software")}
+              onMouseLeave={() => setHovered(null)}
+            >
+              Software Asset Management
+            </motion.span>
+            , and{" "}
+            <motion.span
+              className="mx-1 px-1 inline-block cursor-none relative z-10"
+              style={{
+                backgroundImage: "linear-gradient(#6DA5E1, #6DA5E1)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left center",
+                backgroundSize: "0% 100%",
+              }}
+              whileInView={{ backgroundSize: "100% 100%" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+              onMouseEnter={() => setHovered("strategy")}
+              onMouseLeave={() => setHovered(null)}
+            >
+              Strategy
+            </motion.span>
+            .
+          </motion.p> */}
+
+          <motion.p
+            className="text-[38px] leading-[48px] w-[80%] mauto py-20"
+            initial={{ y: 60, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, ease: [0, 1, 0.49, 1], delay: 0.6 }}
+            viewport={{ once: true, amount: 0.5 }}
+          >
+            Nahteava is an independent consulting firm focused on{" "}
+            <motion.span
+              className="mx-1 px-1 inline-block relative z-10 hover:z-[999999] hover:bg-transparent mix-blend-darken !hover:bg-none "
+              style={{
+                background: "linear-gradient(#EFE574, #EFE574)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left center",
+                backgroundSize: "0% 100%",
+              }}
+              whileInView={{ backgroundSize: "100% 100%" }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              onMouseEnter={() => setHovered("it")}
+              onMouseLeave={() => setHovered(null)}
+            >
+              IT Asset Management
+            </motion.span>
+            ,{" "}
+            <motion.span
+              className="mx-1 px-1 inline-block relative z-10 hover:z-[99999999]  mix-blend-darken"
+              style={{
+                backgroundImage: "linear-gradient(#ECA4BD, #ECA4BD)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left center",
+                backgroundSize: "0% 100%",
+              }}
+              whileInView={{ backgroundSize: "100% 100%" }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+              onMouseEnter={() => setHovered("software")}
+              onMouseLeave={() => setHovered(null)}
+            >
+              Software Asset Management
+            </motion.span>
+            , and{" "}
+            <motion.span
+              className="mx-1 px-1 inline-block relative z-10  hover:z-[99999999]    hover:text-white "
+              style={{
+                backgroundImage: "linear-gradient(#6DA5E1, #6DA5E1)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "left center",
+                backgroundSize: "0% 100%",
+              }}
+              whileInView={{ backgroundSize: "100% 100%" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+              onMouseEnter={() => setHovered("strategy")}
+              onMouseLeave={() => setHovered(null)}
             >
               Strategy
             </motion.span>
@@ -491,7 +623,7 @@ export default function Section01() {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{
                 duration: 0.8,
-                delay: 0.8,
+                delay: 0.5,
                 ease: [0, 1, 0.49, 1], // Custom cubic-bezier easing
               }}
               viewport={{ once: true, amount: 0.6 }}
@@ -515,6 +647,6 @@ export default function Section01() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

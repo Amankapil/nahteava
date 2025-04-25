@@ -13,9 +13,9 @@ const services = [
   { title: "Organization And Change", image: "/services/img4.png" },
 ];
 const about = [
-  { title: "About Us", image: "/services/img5.png" },
-  { title: "Our Approach", image: "/services/img6.png" },
-  { title: "Our Impact", image: "/services/img7.png" },
+  { title: "About Us", image: "/images/img8.png" },
+  { title: "Our Approach", image: "/images/img9.png" },
+  { title: "Our Impact", image: "/images/img10.png" },
 ];
 const services2 = [
   { title: "Software Asset Management", image: "/services/img5.png" },
@@ -40,12 +40,18 @@ const services3 = [
 const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [showDropdown, setShowDropdown] = useState(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeIndex1, setActiveIndex1] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex1, setActiveIndex1] = useState(null);
 
   return (
     <nav className="relative">
-      <div className="flex justify-between items-center px-6 py-4  bg-[#F5F5F5] fixed w-full z-[999999999]">
+      <div
+        className={`flex justify-between items-center px-6 py-4  bg-[#F5F5F5] fixed w-full  z-[999999999] ${
+          showDropdown == "services" || showDropdown == "about"
+            ? "border-b border-[#ccc]"
+            : ""
+        }`}
+      >
         <div className="text-2xl font-bold text-gray-800">
           <Image alt="logo" src="/logo.png" width={160} height={40} />
         </div>
@@ -55,9 +61,9 @@ const Navbar = () => {
             onMouseEnter={() => setShowDropdown("services")}
             onMouseLeave={() => setShowDropdown(null)}
             // onClick={() => setShowDropdown(!showDropdown)}
-            className={`relative cursor-pointer flex items-center p-2  gap-2 ${
+            className={`relative cursor-pointer flex items-center p-2 px-4  gap-2 ${
               showDropdown == "services"
-                ? "text-[#FF8200] border border-[#DBDBDB] bg-[#E6E6E6] py-2"
+                ? "text-[#FF8200] border border-[#DBDBDB] bg-[#F0F0F0] py-2"
                 : ""
             }`}
           >
@@ -94,52 +100,17 @@ const Navbar = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
+                  exit={{ opacity: 1, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-12 -left-[380px] left0 h[400px] w-[1300px] gap-4 border-t border-[#ccc] bg-[#F5F5F5] shadow-lg flex z-50 items-center justify-center"
+                  className="absolute top-14 m-0 p-0 top4 -left-[380px] left0 h-[320px] w-[1272px] gap-0 border-t border-r border-b border-l border-[#ccc] bg-[#F5F5F5]  flex z-50 items-center justify-center"
                 >
                   {/* Left Image */}
-                  <div className="w-[377px]  bg-[#FF8200] flex justify-center items-center ">
-                    {/* <div className="w-[272px] h-[272px]  bg-[#FF8200] flex justify-center items-center p-4 m6">
-                      <svg
-                        width="202"
-                        height="195"
-                        viewBox="0 0 202 195"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M186.34 149.5H14.8652L100.603 0.999023L186.34 149.5Z"
-                          stroke="white"
-                        />
-                        <circle
-                          cx="152"
-                          cy="57"
-                          r="49.5"
-                          stroke="white"
-                          stroke-dasharray="4 4"
-                        />
-                        <circle
-                          cx="50"
-                          cy="57"
-                          r="49.5"
-                          stroke="white"
-                          stroke-dasharray="4 4"
-                        />
-                        <circle
-                          cx="101"
-                          cy="145"
-                          r="49.5"
-                          stroke="white"
-                          stroke-dasharray="4 4"
-                        />
-                      </svg>
-                    </div> */}
-                    <div className="wfull flex items-start justify-start overflow-hidden   sticky w-[353px] top-[150px] h-[353px]">
+                  <div className="w-[320px] h-[320px] bg[#FF8200] flex justify-center items-center ">
+                    <div className="wfull flex items-start justify-start overflow-hidden  bg[#FF8200]   w-[320px] top-[150px] h-[320px] p-6">
                       {services3.map((service, index) => (
                         <div
                           key={index}
-                          className={`absolute transition-all -top-5 duration-500 ease-in-out
+                          className={`absolute transition-all  -top5 duration-500 m6 w-[272px] h-[272px] ease-in-out
                 ${
                   activeIndex === index
                     ? "opacity-100 translate-y-0"
@@ -150,15 +121,30 @@ const Navbar = () => {
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-0"
                 }
+                 ${
+                   activeIndex === null && activeIndex1 === null
+                     ? "opacity-100 translate-y-0"
+                     : "opacity-0 translate-y-0"
+                 }
               `}
                         >
-                          <Image
-                            src={service.image}
-                            alt={service.title}
-                            width={353}
-                            height={353}
-                            className="object-contain"
-                          />
+                          {activeIndex1 === null && activeIndex === null ? (
+                            <Image
+                              src="/services/img1.png"
+                              alt={service.title}
+                              width={272}
+                              height={272}
+                              className="object-contain"
+                            />
+                          ) : (
+                            <Image
+                              src={service.image}
+                              alt={service.title}
+                              width={272}
+                              height={272}
+                              className="object-contain"
+                            />
+                          )}
                         </div>
                       ))}
                     </div>
@@ -173,7 +159,7 @@ const Navbar = () => {
                             key={index}
                             onMouseEnter={() => setActiveIndex(index)}
                             onMouseLeave={() => setActiveIndex(null)}
-                            className="relative overflow-hidden border-r flex items-center justify-between px-4 border-t border-b border-[#CCCCCC] py-6 bg-[#F5F5F5] cursor-pointer group"
+                            className="relative h-[80px] overflow-hidden border-r flex items-center justify-between px-4 border-t border-b border-[#CCCCCC] py-6 bg-[#F5F5F5] cursor-pointer group"
                           >
                             <motion.div
                               initial={{ scaleY: 0 }}
@@ -184,7 +170,7 @@ const Navbar = () => {
                               } bg-[#FF8200] z-0`}
                             />
 
-                            <span className="text-[20px] text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
+                            <span className="text-[24px] text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
                               {service.title}
                             </span>
                             <span className="text-lg text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
@@ -202,7 +188,7 @@ const Navbar = () => {
                             key={index}
                             onMouseEnter={() => setActiveIndex1(index + 4)}
                             onMouseLeave={() => setActiveIndex1(null)}
-                            className="relative overflow-hidden flex border-r items-center justify-between px-4 border-t border-b border-[#CCCCCC] py-6 bg-[#F5F5F5] cursor-pointer group"
+                            className="relative h-[80px] text-[24px] overflow-hidden flex border-r items-center justify-between px-4 border-t border-b border-[#CCCCCC] py-6 bg-[#F5F5F5] cursor-pointer group"
                           >
                             <motion.div
                               initial={{ scaleY: 0 }}
@@ -213,7 +199,7 @@ const Navbar = () => {
                               } bg-[#FF8200] z-0`}
                             />
 
-                            <span className="text-[20px] text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
+                            <span className="text-[24px] text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
                               {service.title}
                             </span>
                             <span className="text-lg text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
@@ -229,13 +215,22 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
 
-          <a className=" p-2" href="#">
+          <a
+            className=" p-2 px-4 hover:text-[#FF8200] hover:border hover:border-[#DBDBDB] hover:bg-[#F0F0F0] py-2"
+            href="#"
+          >
             Solutions
           </a>
-          <a className=" p-2" href="#">
+          <a
+            className=" p-2 px-4 hover:text-[#FF8200] hover:border hover:border-[#DBDBDB] hover:bg-[#F0F0F0] py-2"
+            href="#"
+          >
             Industries
           </a>
-          <a className=" p-2" href="#">
+          <a
+            className=" p-2 px-4 hover:text-[#FF8200] hover:border hover:border-[#DBDBDB] hover:bg-[#F0F0F0] py-2"
+            href="#"
+          >
             Insights
           </a>
 
@@ -265,7 +260,7 @@ const Navbar = () => {
             // onClick={() => setShowDropdown(!showDropdown)}
             className={`relative cursor-pointer flex items-center p-2  gap-2 ${
               showDropdown == "about"
-                ? "text-[#FF8200] border border-[#DBDBDB] bg-[#E6E6E6] py-2"
+                ? "text-[#FF8200] border border-[#DBDBDB] bg-[#F0F0F0] py-2"
                 : ""
             }`}
           >
@@ -302,51 +297,17 @@ const Navbar = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
+                  exit={{ opacity: 1, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-12 -left-[380px] h[400px] w-[789px] gap-4 border-t border-[#ccc] bg-[#F5F5F5] shadow-lg flex z-50 items-start justify-start"
+                  className="absolute top-14 m-0 p-0 top4 -left-[380px] left0 h-[320px] w-[798px] gap-0 border-t border-r border-b border-l border-[#ccc] bg-[#F5F5F5]  flex z-50 items-start justify-start"
                 >
                   {/* Left Image */}
-                  <div className="w-[377px]  bg-[#FF8200] flex justify-center items-center ">
-                    <div className="w-[353px] h-[353px]  bg[#FF8200] flex justify-center items-center p-4 m6">
-                      {/* <svg
-                        width="202"
-                        height="195"
-                        viewBox="0 0 202 195"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M186.34 149.5H14.8652L100.603 0.999023L186.34 149.5Z"
-                          stroke="white"
-                        />
-                        <circle
-                          cx="152"
-                          cy="57"
-                          r="49.5"
-                          stroke="white"
-                          stroke-dasharray="4 4"
-                        />
-                        <circle
-                          cx="50"
-                          cy="57"
-                          r="49.5"
-                          stroke="white"
-                          stroke-dasharray="4 4"
-                        />
-                        <circle
-                          cx="101"
-                          cy="145"
-                          r="49.5"
-                          stroke="white"
-                          stroke-dasharray="4 4"
-                        />
-                      </svg> */}
-                      <div className="wfull flex items-start justify-start overflow-hidden   sticky w-[353px] top-[150px] h-[353px]">
-                        {services3.map((service, index) => (
-                          <div
-                            key={index}
-                            className={`absolute transition-all opacity-1 -top5 duration-500 ease-in-out
+                  <div className="w-[320px] h-[320px] bg[#FF8200] flex justify-start items-start ">
+                    <div className="wfull flex items-start justify-start overflow-hidden  bg[#FF8200]   w-[320px] top-[150px] h-[320px] p-6">
+                      {about.map((service, index) => (
+                        <div
+                          key={index}
+                          className={`absolute transition-all  -top5 duration-500 m6 w-[272px] h-[272px] ease-in-out
                 ${
                   activeIndex === index
                     ? "opacity-100 translate-y-0"
@@ -357,31 +318,45 @@ const Navbar = () => {
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-0"
                 }
+                 ${
+                   activeIndex === null && activeIndex1 === null
+                     ? "opacity-100 translate-y-0"
+                     : "opacity-0 translate-y-0"
+                 }
               `}
-                          >
+                        >
+                          {activeIndex1 === null && activeIndex === null ? (
+                            <Image
+                              src="/images/img8.png"
+                              alt={service.title}
+                              width={272}
+                              height={272}
+                              className="object-contain"
+                            />
+                          ) : (
                             <Image
                               src={service.image}
                               alt={service.title}
-                              width={353}
-                              height={353}
+                              width={272}
+                              height={272}
                               className="object-contain"
                             />
-                          </div>
-                        ))}
-                      </div>
+                          )}
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="flex">
                     {/* Right Services List */}
-                    <div className="flex flex-col w-[400px] border-l  border-[#CCCCCC]">
+                    <div className="flex flex-col w-[478px] border-l  border-[#CCCCCC]">
                       {about.map((service, index) => {
                         const hovered = activeIndex === index;
                         return (
                           <div
                             key={index}
                             onMouseEnter={() => setActiveIndex(index)}
-                            onMouseLeave={() => setActiveIndex(index)}
-                            className="relative overflow-hidden border-r flex items-start justify-between px-4 border-t border-b border-[#CCCCCC] py-6 bg-[#F5F5F5] cursor-pointer group"
+                            onMouseLeave={() => setActiveIndex(null)}
+                            className="relative h-[80px] overflow-hidden border-r flex items-center justify-between px-4 border-t border-b border-[#CCCCCC] py-6 bg-[#F5F5F5] cursor-pointer group"
                           >
                             <motion.div
                               initial={{ scaleY: 0 }}
@@ -392,7 +367,7 @@ const Navbar = () => {
                               } bg-[#FF8200] z-0`}
                             />
 
-                            <span className="text-[20px] text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
+                            <span className="text-[24px] text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
                               {service.title}
                             </span>
                             <span className="text-lg text-[#4A4A4A] group-hover:text-white z-10 transition-colors duration-300">
@@ -408,7 +383,10 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
 
-          <a className=" p-2" href="#">
+          <a
+            className=" p-2 px-4 hover:text-[#FF8200] hover:border hover:border-[#DBDBDB] hover:bg-[#F0F0F0] py-2"
+            href="#"
+          >
             Contact
           </a>
         </div>

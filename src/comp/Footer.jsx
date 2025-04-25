@@ -7,7 +7,7 @@ export default function Footer() {
         backgroundPosition: "bottom center",
         backgroundSize: "102%",
       }}
-      className=" fixe bottom-0 left-0 w-full -z-1 bg-[#E4E4E4] text-[#313131] pt16 pb-10 h-[772px] overflowscroll"
+      className="  bottom-0 left-0 w-full -z-1 bg-[#E4E4E4] text-[#313131] pt16 pb-10 h-[772px] overflowscroll"
     >
       <div className="max-w7xl mx-auto p  pt12 bordert border-gray-300 relative">
         {/* Top CTA */}

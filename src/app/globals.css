@@ -74,7 +74,7 @@ body {
   color: #333;
   /* border-radius: 0.5rem; */
   box-shadow: 0px 2px 3px 0px #00000005 inset;
-  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
 }
 
 .hover-button::before {
@@ -89,10 +89,10 @@ body {
   border: 1px solid #fff;
   box-shadow: 0px 3px 7px -2px #b3b3b3;
   margin-left: 2px;
-  background: white;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f3f3 100%);
   transition: width 0.5s ease;
   z-index: 0;
-  transition: all 0.5s cubic-bezier(0, 0.92, 0.29, 1);
+  /* transition: all 0.5s cubic-bezier(0, 0.92, 0.29, 1); */
 }
 
 .hover-button:hover::before {
@@ -103,8 +103,11 @@ body {
   color: #4a4a4a;
   font-weight: 400;
   text-shadow: 0px 1px 5px 0px #0000002e;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.18);
+
   /* text-shadow: 0px 1px 0px 0px #e1e1e1b2; */
-  transition: margin 0.1s cubic-bezier(0, 0.92, 0.29, 1);
+  /* transition: margin 0.1s cubic-bezier(0, 0.92, 0.29, 1); */
+  transition: margin 0.5s ease;
 }
 .hover-button .text,
 .hover-button .arrow,
@@ -144,7 +147,7 @@ body {
   margin-left: 0px;
   color: #000;
   /* transition: all 0.5s ease-in-out; */
-  transition: margin 0.5s cubic-bezier(0, 0.92, 0.29, 1);
+  transition: margin 0.5s ease;
 }
 
 .hover-button:hover .icon {

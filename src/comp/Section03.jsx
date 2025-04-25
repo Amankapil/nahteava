@@ -2,10 +2,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
-
 export default function Section03() {
   const sectionRef = useRef(null);
-
 
   // Get scroll progress of this section
   const { scrollYProgress } = useScroll({
@@ -15,7 +13,7 @@ export default function Section03() {
 
   // Move X from 0 to 100px as user scrolls
   //   const x = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
-  const y = useTransform(scrollYProgress, [0, 1], ["40%", "-40%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "-200%"]);
 
   return (
     <section
@@ -23,8 +21,8 @@ export default function Section03() {
       className=" relative h-[736px] overflow-hidden w-full bg-[#f5f5f5] "
     >
       {/* Moving Background */}
-      {/* <motion.div style={{ y }} className="absolute inset-0 z-[1]"> */}
-      <motion.div className="absolute inset-0 z-1">
+      <motion.div style={{ y }} className="absolute inset-0 z-[1]">
+        {/* <motion.div className="absolute inset-0 z-1"> */}
         <div
           className="w-full h-full z-[1]"
           style={{

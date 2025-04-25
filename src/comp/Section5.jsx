@@ -203,7 +203,7 @@ export default function Section5() {
             <motion.div
               variants={card}
               key={idx}
-              className={`relative border-1 border-dashed h-[383px] border-[#FF8200] p-2 ${
+              className={`relative border-1 border-dashed h-[383px] border-[#FF8200] bg-[#E0E0E0] p-2 ${
                 idx % 2 === 1 ? "mt-[128px]" : ""
               }`}
             >

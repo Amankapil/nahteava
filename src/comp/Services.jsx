@@ -215,7 +215,7 @@ export default function Section02() {
               })}
             </div>
 
-            <div className=" mt-10 mb-28 px-4">
+            <div className=" mt-10 mb-5 px-4">
               <div className="flx justify-center mt z-[9999] relative wfull origin-right overflow-hidden w-[200px]">
                 <motion.div
                   initial={{ width: 400, opacity: 0, x: -200 }}

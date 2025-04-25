@@ -349,7 +349,7 @@ export default function Section5() {
                     borderRadius: "0px",
                     transition: {
                       duration: 0.9,
-                      ease: [0.35, 0.17, 0.3, 0.86],
+                      ease: [0, 0.92, 0.29, 1],
                     },
                   },
                 }}

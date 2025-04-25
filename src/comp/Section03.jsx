@@ -2,8 +2,10 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
+
 export default function Section03() {
   const sectionRef = useRef(null);
+
 
   // Get scroll progress of this section
   const { scrollYProgress } = useScroll({

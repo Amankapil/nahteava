@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useRef } from "react";
 import { ArrowRight } from "lucide-react";
 import { FaRegSmile } from "react-icons/fa";
 
@@ -183,8 +184,23 @@ export default function Hero() {
     return () => window.removeEventListener("scroll", scroll);
   }, []);
 
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"], // Starts when section hits bottom, ends when fully passed
+  });
+
+  // Scale from 0.5 to 1 as user scrolls
+  const scale = useSpring(useTransform(scrollYProgress, [0, 1], [0.7, 1.3]), {
+    stiffness: 100,
+    damping: 30,
+  });
+
+  // Optional opacity transform
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
+
   return (
-    <section className="relative overflowhidden pt-24 px-6 bg-[#F5F5F5] ">
+    <section className="relative overflowhidden pt-24 px- bg-[#F5F5F5] ">
       {/* Floating Flags with Poles */}
       <div className="h-[500px] absolute flex w-[98%]">
         {cards.map((card, i) => (
@@ -369,14 +385,14 @@ export default function Hero() {
       </div>
 
       {/* Hero Image */}
-      <div className="h-[600px]">
-        <motion.div
+      {/* <div className="h-[600px]"> */}
+      {/* <motion.div
           initial={{ height: 0, opacity: 1 }}
           animate={{ height: 600, opacity: 1 }}
           transition={{
             duration: 2,
             delay: 0.6,
-            ease: [0, 0.45, 0.65, 1], // Custom cubic-bezier easing
+            ease: [0, 0.45, 0.65, 1],
           }}
           className="h-[600px] mt-11 overflow-hidden z-[999999]"
         >
@@ -390,8 +406,30 @@ export default function Hero() {
               transform: `translateY(-${scrollY * 0.3}px)`,
             }}
           ></div>
+        </motion.div> */}
+      {/* </div> */}
+      <section ref={ref} className="h[200vh] overflow-hidden relative bgblack">
+        <motion.div
+          style={{ scale, opacity }}
+          className="w-[100%] h-screen  top-0 left-0 origin-center z-10 overflow-hidden"
+        >
+          <div
+            className="w-full h-full bg-cover bg-center"
+            style={{
+              backgroundImage: 'url("/images/img1.png")',
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
         </motion.div>
-      </div>
+
+        {/* Dummy content for scroll */}
+        {/* <div className="h-[300vh] relative z-20">
+          <div className="pt-[100vh] text-white text-center">
+            <h1 className="text-6xl font-bold">Scroll to Reveal</h1>
+          </div>
+        </div> */}
+      </section>
     </section>
   );
 }

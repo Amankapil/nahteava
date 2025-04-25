@@ -102,7 +102,7 @@ const Navbar = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 1, y: -10 }}
                   transition={{ duration: 0.2 }}
-                  className="absolute top-14 m-0 p-0 top4 -left-[380px] left0 h-[320px] w-[1272px] gap-0 border-t border-r border-b border-l border-[#ccc] bg-[#F5F5F5]  flex z-50 items-center justify-center"
+                  className="absolute top-14 m-0 p-0 top4 -left-[320px] left0 h-[320px] w-[1272px] gap-0 border-t border-r border-b border-l border-[#ccc] bg-[#F5F5F5]  flex z-50 items-center justify-center"
                 >
                   {/* Left Image */}
                   <div className="w-[320px] h-[320px] bg[#FF8200] flex justify-center items-center ">

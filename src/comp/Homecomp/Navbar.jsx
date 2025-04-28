@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiSearch } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   { title: "Advisory Services", image: "/services/img1.png" },
@@ -383,12 +384,12 @@ const Navbar = () => {
             </AnimatePresence>
           </div>
 
-          <a
+          <Link
             className=" p-2 px-4 hover:text-[#FF8200] hover:border hover:border-[#DBDBDB] hover:bg-[#F0F0F0] py-2"
-            href="#"
+            href="/contact"
           >
             Contact
-          </a>
+          </Link>
         </div>
 
         {/* Search & Button */}

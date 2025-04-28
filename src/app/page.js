@@ -114,15 +114,15 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Navbar from "@/comp/Navbar";
-import Hero from "@/comp/Hero";
-import ConnectedSection from "@/comp/ConnectedSection";
-import Services from "@/comp/Services";
-import Section03 from "@/comp/Section03";
-import TestimonialSwiper from "@/comp/TestimonialSwiper";
-import Section5 from "@/comp/Section5";
-import Section06 from "@/comp/Section06";
-import Footer from "@/comp/Footer";
+import Navbar from "@/comp/Homecomp/Navbar";
+import Hero from "@/comp/Homecomp/Hero";
+import ConnectedSection from "@/comp/Homecomp/ConnectedSection";
+import Services from "@/comp/Homecomp/Services";
+import Section03 from "@/comp/Homecomp/Section03";
+import TestimonialSwiper from "@/comp/Homecomp/TestimonialSwiper";
+import Section5 from "@/comp/Homecomp/Section5";
+import Section06 from "@/comp/Homecomp/Section06";
+import Footer from "@/comp/Homecomp/Footer";
 import Lenis from "lenis";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -144,6 +144,7 @@ export default function Home() {
     return () => lenis.destroy();
   }, []);
   const sectionsRef = useRef([]);
+  const sectionsRef1 = useRef([]);
 
   useEffect(() => {
     const sections = sectionsRef.current;
@@ -159,7 +160,7 @@ export default function Home() {
             trigger: section,
             start: "top bottom",
             end: "top center",
-            scrub: 0.3,
+            scrub: 0.5,
           },
         }
       );
@@ -174,10 +175,39 @@ export default function Home() {
     sectionsRef.current[i] = el;
   };
 
+  useEffect(() => {
+    const sections = sectionsRef1.current;
+
+    sections.forEach((section, i) => {
+      gsap.fromTo(
+        section,
+        { yPercent: 0 },
+        {
+          yPercent: -100,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top bottom",
+            end: "top center",
+            scrub: 0.5,
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+    };
+  }, []);
+
+  const setRef1 = (el, i) => {
+    sectionsRef1.current[i] = el;
+  };
+
   return (
     <>
       <Navbar />
-      <main className="h-[5450px] overflow-hidden">
+      <main className="h-[4520px] overflow-hidden">
         <div className="z-[88]">
           <Hero />
         </div>
@@ -206,20 +236,20 @@ export default function Home() {
           <TestimonialSwiper />
         </section>
         <section
-          ref={(el) => setRef(el, 4)}
+          ref={(el) => setRef1(el, 0)}
           className=" -translate-y-[140%] bg-white relative z-[992]"
         >
           <Section5 />
         </section>
         <section
-          ref={(el) => setRef(el, 5)}
-          className="  -translate-y-[300%] bg-gray-100 relative z-[993]"
+          ref={(el) => setRef1(el, 1)}
+          className="  -translate-y-[350%] bg-gray-100 relative z-[993]"
         >
           <Section06 />
         </section>
         <section
-          ref={(el) => setRef(el, 6)}
-          className=" -translate-y-[230%] bg-gray-100 relative z-[994]"
+          ref={(el) => setRef1(el, 2)}
+          className=" -translate-y-[300%] bg-gray-100 relative z-[994]"
         >
           <Footer />
         </section>

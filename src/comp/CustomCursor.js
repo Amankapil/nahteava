@@ -75,7 +75,7 @@ export default function CustomCursor({ type, visible }) {
     <motion.img
       src={images[type]}
       alt=""
-      className="pointer-events-none fixed z-[9999]  w-[300px] h-[300px] mi-blend-difference select-none"
+      className="pointer-events-none absolute cursor-none  z-[9999]  w-[300px] h-[300px] mi-blend-difference select-none -translate-y-[50%] -translate-x-[50%]"
       style={{ x, y }}
       // animate={{ x: x - 40, y: y- 40 }}
       // transition={{ type: "spring", stiffness: 300, damping: 20 }}

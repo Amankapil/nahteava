@@ -23,7 +23,15 @@ export default function Section06() {
       {/* Moving Background */}
       {/* <motion.div style={{ y }} className="absolute inset-0 z-0"> */}
       <motion.div className="absolute inset-0 z-1">
-        <div
+        <motion.div
+          // className="w-full h-full z-[1]"
+          initial={{ y: 260, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 1,
+            ease: [0, 1, 0.49, 1], // Custom cubic-bezier easing
+          }}
           className="w-full h-full bg[#F5F5F5]  z-[9] relative"
           style={{
             backgroundImage: 'url("/images/bui2.svg")',
@@ -31,7 +39,7 @@ export default function Section06() {
             backgroundRepeat: "no-repeat",
             backgroundPosition: "bottom center",
           }}
-        ></div>
+        ></motion.div>
       </motion.div>
 
       {/* Foreground Content */}

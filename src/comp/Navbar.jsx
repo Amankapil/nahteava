@@ -415,8 +415,11 @@ const Navbar = () => {
             {searchOpen ? <IoMdClose /> : <FiSearch />}
           </button>
           {/* ??  lets talk underline animation  */}
-          <button className="relative group text-[16px] text-[#4A4A4A] cursor-pointer px-6 py-2 mb15 font-normal transition duration-300 hover:text-[#FF8200] after:content-[''] after:absolute after:bottom-2 after:left-6 after:h-[1px] after:w-[80%] after:bg-[#4A4A4A] hover:after:bg-[#FF8200] after:transition-all after:duration-300 hover:after:w-[80%]">
+          <button className="relative group text-[16px] text-[#4A4A4A] cursor-pointer px-6 py-2 mb15 font-normal transition duration-300 hover:text-[#FF8200] ">
             Let’s Talk
+            <span className="absolute bottom-2 left-6 w-[85%] h-[1px] bg-[#4A4A4A]"></span>
+            <span className="absolute bottom-2 left-6 w-[85%] h-[1px] bg-[#FF8200] origin-left scale-x-0 transition-transform duration-300 ease-linear group-hover:scale-x-100"></span>
+            {/* Arrow Container */}
             <span className="absolute overflow-hidden w-4 h-4 top-[14px] ml-2 -mr-[86px]">
               <span className="absolute text-amber-50 left-0 top-0 transition-all duration-300 group-hover:translate-x-2 opacity-100 group-hover:opacity-0">
                 <svg

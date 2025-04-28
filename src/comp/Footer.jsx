@@ -52,8 +52,10 @@ export default function Footer() {
               </span>
             </button> */}
 
-            <button className="relative group text-[24px] text-[#4A4A4A] cursor-pointer px-6 py-2 mb-15 font-normal transition duration-300 hover:text-[#FF8200] after:content-[''] after:absolute after:bottom-2 after:left-6 after:h-[1px] after:w-[85%] after:bg-[#4A4A4A] hover:after:bg-[#FF8200] after:transition-all after:duration-300 hover:after:w-[85%]">
+            <button className="relative group text-[16px] text-[#4A4A4A] cursor-pointer px-6 py-2 mb-15 font-normal transition duration-300 hover:text-[#FF8200]">
               Let’s Talk
+              <span className="absolute bottom-2 left-6 w-[85%] h-[1px] bg-[#4A4A4A]"></span>
+              <span className="absolute bottom-2 left-6 w-[85%] h-[1px] bg-[#FF8200] origin-left scale-x-0 transition-transform duration-300 ease-linear group-hover:scale-x-100"></span>
               {/* Arrow Container */}
               <span className="absolute overflow-hidden w-4 h-3 ml-3 -mr-[115px] top-[50%] translate-y-[-50%]">
                 {/* First Arrow (fade out on hover) */}
@@ -161,7 +163,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
-            <div className="border- pr-32 text-[20px] font-mark px-0 border-gray-300 pt-10 pb-40 flex flex-col md:flex-row justify-between items-start md:items-center gap-4  font-mark text-[#4a4a4a]">
+            <div className="border- pr-[137px] max-md:p-0 text-[20px] font-mark px-0 border-gray-300 pt-10 pb-40 flex flex-col md:flex-row justify-between items-start md:items-center gap-4  font-mark text-[#4a4a4a]">
               <div className="flex gap-4">
                 <a href="#" className="hover:text-[#FF8200]">
                   Terms & Conditions

@@ -252,15 +252,19 @@ body {
   z-index: 5; /* lower than background image z-index */
 }
 
-.group:hover .group-hover\\:animate-shineeffect {
-  animation: shineMove 1s ease-in-out infinite;
+.shine-anmi:hover .ani {
+  animation: shine 0.8s linear forwards;
 }
 
-@keyframes shineMove {
+@keyframes shine {
   0% {
-    transform: translate(-100%, -100%);
+    transform: rotate(45deg) translate(-50%, -50%);
   }
   100% {
-    transform: translate(100%, 100%);
+    transform: rotate(45deg) translate(150%, 150%);
   }
+}
+
+.animate-shine {
+  animation: shine 0.8s linear forwards;
 }

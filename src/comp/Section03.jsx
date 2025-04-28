@@ -21,10 +21,26 @@ export default function Section03() {
       className=" relative h-[736px] overflow-hidden w-full bg-[#f5f5f5] "
     >
       {/* Moving Background */}
-      <motion.div style={{ y }} className="absolute inset-0 z-[1]">
+      <motion.div
+        initial={{ y: 260, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+          duration: 1,
+          delay: 1,
+          ease: [0, 1, 0.49, 1], // Custom cubic-bezier easing
+        }}
+        className="absolute inset-0 z-[1]"
+      >
         {/* <motion.div className="absolute inset-0 z-1"> */}
-        <div
+        <motion.div
           className="w-full h-full z-[1]"
+          initial={{ y: 260, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 1,
+            ease: [0, 1, 0.49, 1], // Custom cubic-bezier easing
+          }}
           style={{
             backgroundImage: 'url("/images/bui.png")',
             backgroundRepeat: "no-repeat",
@@ -32,7 +48,7 @@ export default function Section03() {
             // backgroundPosition: "0% 100%",
             // backgroundSize: "cover",
           }}
-        ></div>
+        ></motion.div>
       </motion.div>
 
       {/* Foreground Content */}

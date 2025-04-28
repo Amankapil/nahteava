@@ -303,30 +303,105 @@ export default function TestimonialSwiper() {
                     </span>
                   </span>
                 </motion.button>
+
+                {/* /////// */}
                 <motion.button
+                  onClick={next}
                   className="absolute w-[60px] group h-[60px] right-28 top-1/2 transform border-dashed border-[#fff] border-[1px] -translate-y-1/2 bgblack text-white p-4  transition"
                   whileHover="hover"
                   initial="rest"
                   animate="rest"
                 >
-                  {/* <motion.span
-                    variants={{
-                      rest: {
-                        height: 0,
-                      },
-                      hover: {
-                        height: "100%",
-                        transition: {
-                          duration: 0.5,
-                          ease: [0.35, 0.17, 0.3, 0.86],
-                        },
-                      },
-                    }}
-                    className="absolute bottom-0 left-0 w-full bg-[#212121] z-0"
-                  /> */}
-
                   <span className=" z-10 text-[16px] flex justify-center items-center gap-4">
-                    <span className="absolute right-3 overflow-hidden w-[40px] h-[40px] inline-block">
+                    <span className="absolute right-3 overflow-hidden w-[36px] h-[36px] inline-block">
+                      <motion.span
+                        className="absolute   left-0"
+                        initial={{ x: 0, opacity: 1 }}
+                        variants={{
+                          // rest: { x: 0 },
+                          hover: { x: -50, opacity: 1 },
+                        }}
+                        transition={{
+                          duration: 0.3,
+                          ease: [0, 0.59, 0.68, 1],
+                        }}
+                      >
+                        <svg
+                          width="40"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_529_1672)">
+                            <path
+                              d="M34 18.5H11.745L20.13 10.115L18 8L6 20L18 32L20.115 29.885L11.745 21.5H34V18.5Z"
+                              fill="#F5F5F5"
+                              fill-opacity="0.4"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_529_1672">
+                              <rect
+                                width="40"
+                                height="40"
+                                fill="white"
+                                transform="matrix(-1 0 0 1 40 0)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </motion.span>
+                      <motion.span
+                        className="absolute left-0"
+                        initial={{ x: 50, opacity: 0 }}
+                        variants={{
+                          rest: { x: 50 },
+                          hover: { x: 0, opacity: 1 },
+                        }}
+                        transition={{
+                          duration: 0.3,
+                          ease: [0, 0.59, 0.68, 1],
+                        }}
+                      >
+                        <svg
+                          width="40"
+                          height="40"
+                          viewBox="0 0 40 40"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g clip-path="url(#clip0_529_1672)">
+                            <path
+                              d="M34 18.5H11.745L20.13 10.115L18 8L6 20L18 32L20.115 29.885L11.745 21.5H34V18.5Z"
+                              fill="#F5F5F5"
+                              fill-opacity="0.4"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_529_1672">
+                              <rect
+                                width="40"
+                                height="40"
+                                fill="white"
+                                transform="matrix(-1 0 0 1 40 0)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </motion.span>
+                    </span>
+                  </span>
+                </motion.button>
+
+                {/* <motion.button
+                  className="absolute w-[60px] group h-[60px] right-28 top-1/2 transform border-dashed border-[#fff] border-[1px] -translate-y-1/2 bgblack text-white p-4  transition"
+                  whileHover="hover"
+                  initial="rest"
+                  animate="rest"
+                >
+                  <span className=" z-10 text-[16px] flex justify-center items-center gap-4">
+                    <span className="absolute right-[10px] overflow-hidden w-[40px] h-[40px] inline-block">
                       <motion.span
                         className="absolute   left-0"
                         initial={{ x: 0, opacity: 1 }}
@@ -359,10 +434,10 @@ export default function TestimonialSwiper() {
                       </motion.span>
                     </span>
                   </span>
-                </motion.button>
+                </motion.button> */}
 
                 {/* Arrow Button (unchanged) */}
-                {/* <button
+                <button
                   onClick={next}
                   className="absolute w-[60px] group h-[60px] right-8 top-1/2 transform border-dashed border-[#fff] border-[1px] -translate-y-1/2 bg-black text-white p-4  transition"
                 >
@@ -397,7 +472,7 @@ export default function TestimonialSwiper() {
                       </svg>
                     </span>
                   </span>
-                </button> */}
+                </button>
               </div>
             </div>
           </div>

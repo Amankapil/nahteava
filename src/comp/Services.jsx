@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 const services = [
   { title: "Advisory Services", image: "/services/img1.png" },
-  { title: "IT Asset Management", image: "/services/img2.png" },
-  { title: "AI Management", image: "/services/img3.png" },
+  { title: "IT Asset Management", image: "/services/img3.png" },
+  { title: "AI Management", image: "/services/img2.png" },
   { title: "Organization And Change", image: "/services/img4.png" },
   { title: "Software Asset Management", image: "/services/img5.png" },
   {

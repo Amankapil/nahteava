@@ -203,7 +203,7 @@ export default function Section5() {
             <motion.div
               variants={card}
               key={idx}
-              className={`relative border-1 border-dashed h-[383px] border-[#FF8200] bg-[#E0E0E0] p-2 ${
+              className={`relative border-1 border-dashed group h-[383px] border-[#FF8200] bg-[#E0E0E0] p-2 ${
                 idx % 2 === 1 ? "mt-[128px]" : ""
               }`}
             >
@@ -214,7 +214,7 @@ export default function Section5() {
               <div className="absolute z-[9999] -bottom-[6px] -right-[6px] w-3 h-3 bg-[#FF8200]"></div>
 
               <div className="bg-[#E0E0E0]">
-                <div className="relative w-full h-56">
+                {/* <div className="relative w-full h-56">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -224,6 +224,25 @@ export default function Section5() {
                   <div className="absolute bottom-0 left-0 bg-[#E0E0E0] border border-[#ccc] px-2 py-1 text-sm font-medium">
                     {item.type}
                   </div>
+                </div> */}
+                <div className="relative w-full h-56  overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover border border-[#ccc] group-hover:brightness-90 transition-all duration-300"
+                  />
+                  <div className="absolute bottom-0 left-0 bg-[#E0E0E0] border border-[#ccc] px-2 py-1 text-sm font-medium">
+                    {item.type}
+                  </div>
+                  {/* Shine effect element */}
+                  <div className="absolute inset-0 overflow-hidden">
+                    <div className="absolute  -left-full -top-full w-1/2 h-[200%] bg-gradient-to-r from-transparent via-white/50 to-transparent transform rotate-45 group-hover:translate-x-[400%] group-hover:translate-y-[40%] transition-all transition-forward duration-1000"></div>
+                    {/* <div
+                      className="absolute -left-full -top-full w-1/2 h-[200%] bg-gradient-to-r from-transparent via-white/70 to-transparent transform rotate-45 
+                    group-hover:animate-shine animate-none ani"
+                    ></div> */}
+                  </div>
                 </div>
 
                 <div className="p-4">
@@ -232,10 +251,6 @@ export default function Section5() {
                   </h3>
                 </div>
 
-                {/* <button className="w-full bg-black text-center text-white py-4 px-6 flex items-center justify-center text-base relative">
-                  Read now
-                  <span className="ml-2 text-xl absolute right-4">→</span>
-                </button> */}
                 <motion.button
                   className="relative overflow-hidden group bg-black w-full text-white py-3 px-9 flex items-center justify-center text-sm"
                   whileHover="hover"

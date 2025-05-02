@@ -23,8 +23,8 @@ const Page = () => {
       const mouseY = e.clientY - logoCenterY;
 
       // Calculate rotation values (limited to certain degrees)
-      const rotateY = (mouseX / logoRect.width) * 20; // 20 degrees max rotation
-      const rotateX = -(mouseY / logoRect.height) * 20;
+      const rotateY = (mouseX / logoRect.width) * 10; // 20 degrees max rotation
+      const rotateX = -(mouseY / logoRect.height) * 10;
 
       // Apply the transformation
       logoRef.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;

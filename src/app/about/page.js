@@ -41,7 +41,7 @@ const Page = () => {
     <>
       <div className="font-mark tracking-tight">
         <Header />
-        <div className="pt-24">
+        <div className="pt-20">
           <svg
             width="1440"
             height="1"
@@ -63,8 +63,8 @@ const Page = () => {
         <section className="text-center py-4 px-0">
           <h1 className="text-[100px] font-bold leading-snug">
             <span className="text-[#FF8200]">Leaders</span> in IT &<br />
-            <span className=" flex items-center">
-              <span className="text-black ml-[131px] -mt-[130px]">
+            <span className=" flex items-center justify-center">
+              <span className="text-black ml-[131px] mr-4 -mt-[130px]">
                 Software
               </span>
               <span className="-z-1 absolute">
@@ -110,16 +110,16 @@ const Page = () => {
                   src={img}
                   height={168}
                   alt="logo"
-                  className="inlineblock bg-[#fff] ml-10"
+                  className="inlineblock bg#fff] ml-6"
                 />
               </span>
             </span>
             <span className="flex justify-center gap-10">
-              <span className="text-black absolute left-[332px] top-[434px]">
+              <span className="text-black absolute left-[342px] top-[414px]">
                 Asset
               </span>{" "}
               <span className="inline-flex items-center">
-                <span className="text-black absolute left-[690px] top-[494px]">
+                <span className="text-black absolute left-[730px] top-[484px]">
                   Management
                 </span>
               </span>

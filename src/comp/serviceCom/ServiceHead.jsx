@@ -89,9 +89,11 @@ const ServiceHead = () => {
           <a href="#" className="hover:underline">
             Contact
           </a>
-          <a href="#" className="hover:underline">
-            → Let's talk
-          </a>
+          <div className="border border-[#F8941E]">
+            <a href="#" className="hover:underline border border-[#F8941E]">
+              → Let's talk
+            </a>
+          </div>
         </nav>
       </header>
     </>

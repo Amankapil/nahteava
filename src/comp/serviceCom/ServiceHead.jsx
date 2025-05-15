@@ -70,7 +70,7 @@ const ServiceHead = () => {
             />
           </svg>
         </div>
-        <nav className="space-x-6 hidden text-[14px]  px-6 py- items-center justify-center h-[60px] md:flex bg-black">
+        <nav className="space-x-6 w-[720px] hidden text-[14px]  px-6 py- items-center justify-center h-[60px] md:flex bg-black">
           <a
             href="#"
             className="hover:underline  flex items-center justify-center  gap-2"

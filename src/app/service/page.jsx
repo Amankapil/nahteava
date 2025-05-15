@@ -50,11 +50,11 @@ export default function Home() {
           <Image src={img9} alt="ljk" />
         </div>
 
-        <div className="flex z-[999] gap-10 h-[390px]">
+        <div className="flex z-[999] gap-10 h-[390px] ">
           <h1 className="text-[60px] z-[99] w-[134%] font-mark font-extrabold leading-tight  mb-6">
             Leaders in IT & Software Asset Management
           </h1>
-          <div>
+          <div className="mt-5">
             <p className="text-[22px] font-bold text-left font-mark  leading-relaxed relative w[50%]  z-[999999] mb-4 text-white">
               Independent, vendor-neutral advisors delivering sustainable
               results in IT Asset Management, Software Asset Management, and
@@ -62,7 +62,7 @@ export default function Home() {
             </p>
             <a
               href="#"
-              className="inlineblock flex items-center justify-center gap-2 relative  z-[999999] mt-4 text-white text-[24px] font-semibold border-b-2 border-white w-[140px] transition"
+              className="inlineblock flex items-center justify-center gap-2 relative  z-[999999] mt-8 text-white text-[24px] font-semibold border-b-2 border-white w-[140px] transition"
             >
               <svg
                 width="24"

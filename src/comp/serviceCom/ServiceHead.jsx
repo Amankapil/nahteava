@@ -3,8 +3,8 @@ import React from "react";
 const ServiceHead = () => {
   return (
     <>
-      <header className="absolute top-0 left-0 w-full z-10 flex justify-between items-center text-white">
-        <div className="text-xl font-bold   px-6 py-4  bg-black">
+      <header className="absolute top-0 left-0 w-full z-10 flex justify-between items-start text-white">
+        <div className="text-xl font-bold  flex justify-center items-center  px-6 py-  bg-black h-[60px] ">
           <svg
             width="131"
             height="38"
@@ -70,9 +70,22 @@ const ServiceHead = () => {
             />
           </svg>
         </div>
-        <nav className="space-x-6 hidden  px-6 py-6 h-[70px] md:flex bg-black">
-          <a href="#" className="hover:underline">
-            Services +
+        <nav className="space-x-6 hidden text-[14px]  px-6 py- items-center justify-center h-[60px] md:flex bg-black">
+          <a
+            href="#"
+            className="hover:underline  flex items-center justify-center  gap-2"
+          >
+            Services{" "}
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M5 0V10" stroke="white" />
+              <path d="M0 5L10 5" stroke="white" />
+            </svg>
           </a>
           <a href="#" className="hover:underline">
             Solutions
@@ -83,17 +96,58 @@ const ServiceHead = () => {
           <a href="#" className="hover:underline">
             Insights
           </a>
-          <a href="#" className="hover:underline">
-            About Us +
+          <a
+            href="#"
+            className="hover:underline  flex items-center justify-center gap-2 "
+          >
+            About Us{" "}
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M5 0V10" stroke="white" />
+              <path d="M0 5L10 5" stroke="white" />
+            </svg>
           </a>
           <a href="#" className="hover:underline">
             Contact
           </a>
-          <div className="border border-[#F8941E]">
-            <a href="#" className="hover:underline border border-[#F8941E]">
-              → Let's talk
-            </a>
-          </div>
+          <a
+            href="#"
+            className="hover:underlin flex items-center justify-center"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.1464 11.8536L11.5 12.2071L12.2071 11.5L11.8536 11.1464L11.1464 11.8536ZM9.06605 8.35895C8.87079 8.16368 8.55421 8.16368 8.35895 8.35895C8.16368 8.55421 8.16368 8.87079 8.35895 9.06605L9.06605 8.35895ZM11.5 11.5L11.8536 11.1464L9.06605 8.35895L8.7125 8.7125L8.35895 9.06605L11.1464 11.8536L11.5 11.5ZM10.0833 5.41667H9.58333C9.58333 7.71787 7.71787 9.58333 5.41667 9.58333V10.0833V10.5833C8.27015 10.5833 10.5833 8.27015 10.5833 5.41667H10.0833ZM5.41667 10.0833V9.58333C3.11548 9.58333 1.25 7.71786 1.25 5.41667H0.75H0.25C0.25 8.27015 2.5632 10.5833 5.41667 10.5833V10.0833ZM0.75 5.41667H1.25C1.25 3.11548 3.11548 1.25 5.41667 1.25V0.75V0.25C2.56319 0.25 0.25 2.56319 0.25 5.41667H0.75ZM5.41667 0.75V1.25C7.71786 1.25 9.58333 3.11548 9.58333 5.41667H10.0833H10.5833C10.5833 2.5632 8.27015 0.25 5.41667 0.25V0.75Z"
+                fill="white"
+              />
+            </svg>
+          </a>
+
+          <a href="#" className=" flex items-center justify-center gap-2">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 14 14"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8.01264 11.8082C8.02215 11.8178 8.31365 11.8908 8.66038 11.9705C9.00714 12.0502 9.2946 12.1032 9.29922 12.0884C9.3038 12.0736 9.33968 11.8329 9.37891 11.5536C9.45772 10.9926 9.64854 10.3377 9.85243 9.92808C10.488 8.65152 11.6283 7.80626 13.0113 7.58657L13.3634 7.53061V6.96669V6.40273L13.0442 6.34917C10.953 5.99832 9.58954 4.43465 9.33449 2.0946C9.31785 1.9418 9.29795 1.81682 9.29028 1.81682C9.21975 1.81682 8.05107 2.09847 8.02897 2.12078C8.01299 2.13691 8.02488 2.28016 8.05543 2.43905C8.39361 4.19851 9.36192 5.63022 10.6185 6.22886L10.9199 6.37246L4.72163 6.3837L0.802246 6.39084V7.53214L4.73171 7.53928L10.9154 7.55057L10.5348 7.74337C9.54763 8.24352 8.76604 9.2246 8.30577 10.5415C8.17462 10.9166 7.97671 11.7719 8.01264 11.8082Z"
+                fill="white"
+              />
+            </svg>
+            Let's talk
+          </a>
         </nav>
       </header>
     </>

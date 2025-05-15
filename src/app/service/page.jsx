@@ -51,7 +51,7 @@ export default function Home() {
         </div>
 
         <div className="flex z-[999] gap-10 h-[390px]">
-          <h1 className="text-[60px] z-[99] w-[149%] font-mark font-extrabold leading-tight  mb-6">
+          <h1 className="text-[60px] z-[99] w-[134%] font-mark font-extrabold leading-tight  mb-6">
             Leaders in IT & Software Asset Management
           </h1>
           <div>

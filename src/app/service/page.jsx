@@ -7,6 +7,7 @@ import img8 from "./assets/Group 42.svg";
 import img5 from "./assets/Component 3.svg";
 import img6 from "./assets/Group 2.svg";
 import img7 from "./assets/Group 3.svg";
+import img9 from "./assets/Component 7.svg";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
@@ -45,9 +46,12 @@ export default function Home() {
         <div className="absolute left-0  z-[2]  top-0">
           <Image src={img3} alt="ljk" />
         </div>
+        <div className="absolute right-0  z-[2]  top-0">
+          <Image src={img9} alt="ljk" />
+        </div>
 
         <div className="flex z-[999] gap-10 h-[390px]">
-          <h1 className="text-[60px] z-[99] w-[149%] font-mark font-extrabold leading-tight mb-6">
+          <h1 className="text-[60px] z-[99] w-[149%] font-mark font-extrabold leading-tight  mb-6">
             Leaders in IT & Software Asset Management
           </h1>
           <div>
@@ -90,12 +94,12 @@ export default function Home() {
           <SciFiCircles />
         </div>
 
-        <div className="absolute top-[229px] left-[0px] w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20 shadow-lg"></div>
-        <div className="absolute -top-[29px] left-[360px] w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20 shadow-lg"></div>
-        <div className="absolute top-[319px] left-[90px] w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20 shadow-lg"></div>
-        <div className="absolute top-[330px] left[1160px] right-44 w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20 shadow-lg"></div>
-        <div className="absolute top-[420px] left[90px] right-0 w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20 shadow-lg"></div>
-        <div className="absolute top-[50px] left-[180px] w-[810px] h-[450px] overflowhidden z-20 shadow-lg">
+        <div className="absolute top-[229px] left-[0px] w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20  "></div>
+        <div className="absolute -top-[29px] left-[360px] w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20  "></div>
+        <div className="absolute top-[319px] left-[90px] w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20  "></div>
+        <div className="absolute top-[330px] left[1160px] right-44 w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20  "></div>
+        <div className="absolute top-[420px] left[90px] right-0 w-[90px] bg-[#FF8200] h-[90px] overflowhidden z-20  "></div>
+        <div className="absolute top-[50px] left-[180px] w-[810px] h-[450px] overflowhidden z-20  ">
           <Image
             src={img}
             alt="Blurred people"
@@ -112,7 +116,7 @@ export default function Home() {
         <div className="absolute left-0  z-[2]  -bottom-[27%]">
           <Image src={img6} alt="ljk" />
         </div>
-        <div className="absolute right-0  z-[2]  -bottom-[27%]">
+        <div className="absolute right-0  z-[2]  -bottom-[28%]">
           <Image src={img7} alt="ljk" />
         </div>
       </div>
